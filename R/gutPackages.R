@@ -4,6 +4,7 @@ gutPackages <- function() {
   require(pheatmap)
   require(RColorBrewer)
   require(reshape2)
+  require(forstringr)
 
 
 }
