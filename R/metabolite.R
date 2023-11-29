@@ -1,26 +1,22 @@
-
+############################################################
+## Metabolomic & 16S integration for correlation analysis ##
+## Dorothée L. Berthold, ETH Zürich                       ##
+############################################################
 
 
 
 #read in metabolomic data
-OMM_conc <- read.csv("tables/intdata_all.csv")
-colnames(OMM_conc)[1] <- "barcode"
+metabolite_conc <- read.csv("tables/intdata_all.csv")
+colnames(metabolite_conc)[1] <- "barcode"
 
 #extract metadata from barcode
-OMM_conc$string <- str_right(OMM_conc$barcode, 6)
-OMM_conc$mouse.number <- str_left(OMM_conc$string, 1)
-OMM_conc$origin <- str_mid(OMM_conc$string, 3, 1)
-OMM_conc$site <- str_mid(OMM_conc$string, 5, 6)
-OMM_conc$colonization <- gsub(".*_(GF|sDMDM|SPF)_.*", "\\1", OMM_conc$barcode)
+metabolite_conc$string <- str_right(metabolite_conc$barcode, 6)
+metabolite$mouse.number <- str_left(metabolite$string, 1)
+metabolite$origin <- str_mid(metabolite$string, 3, 1)
+metabolite$site <- str_mid(metabolite$string, 5, 6)
+metabolite$colonization <- gsub(".*_(GF|sDMDM|SPF)_.*", "\\1", metabolite$barcode)
 
 #convert into long format
-int_long <- reshape2::melt(OMM_conc, id.vars = c("barcode", "mouse.number", "site", "colonization", "origin"))
+int_long <- reshape2::melt(metabolite_conc, id.vars = c("barcode", "mouse.number", "site", "colonization", "origin"))
 int_long <- int_long |> 
   filter(variable != "string")
-
-#write.csv(int_long, "results/int_all_long.csv")
-
-#subset for only OMM
-OMM_long <- subset(int_long, int_long$colonization == "sDMDM")
-
-#write.csv(OMM_long, "results/OMM_intensity_long.csv")
