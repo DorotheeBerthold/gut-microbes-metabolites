@@ -1,9 +1,9 @@
 #calculate mean abundance across biological replicates
-microbes_long_mean <- microbes_long |> 
-  group_by(Bacteria, site, origin) |> 
-  mutate(mean_abundance = mean(Abundance, na.rm = T)) |> 
-  ungroup() |> 
-  group_by(mean_abundance) |> 
+microbes_long_mean <- microbes_long  %>%  
+  group_by(Bacteria, site, origin) %>% 
+  mutate(mean_abundance = mean(Abundance, na.rm = T)) %>% 
+  ungroup() %>%  
+  group_by(mean_abundance) %>%  
   distinct(Bacteria, site, origin)
 
 microbes_long_mean <- as.data.frame(microbes_long_mean)
