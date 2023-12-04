@@ -58,7 +58,7 @@ metabolite_long2 <- metabolite_long2[metabolite_long2$site2 %in% keep,]
 
 
 #Import 16S abundances and convert to long format
-################################################################################################################################
+##############################################################################################################################
 #read in 16S and corresponding meta data
 #family_16S: fraction table containing bacterial families in a column "rank" and all samples in columns
 #meta_16S: long-table format with a column "barcode" matching column names of family_16S
