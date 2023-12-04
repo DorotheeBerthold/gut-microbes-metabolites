@@ -12,8 +12,8 @@ gutPackages()
 #metabolite_conc: df with columns as different metabolites & row different samples (identifier in column "barcode")
 #meta_metabolties: df with meta_data containing "barcode" column to match and join with metabolite_conc
 
-metabolite_conc <- read.csv("tables/intdata_all.csv")
-meta_metabolite <- read.csv("tables/meta_metabolites.csv")
+metabolite_conc <- read.csv("examples/intdata_all.csv")
+meta_metabolite <- read.csv("examples/meta_metabolites.csv")
 
 #generates new joined df "metabolites" containing both meta-data and measured data if rownames match
 
@@ -64,10 +64,10 @@ metabolite_long2 <- metabolite_long2[metabolite_long2$site2 %in% keep,]
 #meta_16S: long-table format with a column "barcode" matching column names of family_16S
 
 #read in 16S sequencing data
-family_16S <- as.data.frame(read_excel("tables/rarefied_OTU_table_RA_Family.xlsx"))
+family_16S <- as.data.frame(read_excel("examples/rarefied_OTU_table_RA_Family.xlsx"))
 
 #read in metadata
-meta_16S <- read_excel("tables/metadata_Karin_16S.xlsx")
+meta_16S <- read_excel("examples/metadata_16S.xlsx")
 meta_16S <- subset(meta_16S, microbiota == "OMM")
 
 #multiply fractions * 100 in order to create relative abundances instead of fractions
