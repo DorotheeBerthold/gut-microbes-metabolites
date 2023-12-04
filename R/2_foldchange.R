@@ -69,9 +69,6 @@ shapiro.test(testdata$logInt)
 GF_OMM_filtered <- GF_OMM_filtered %>% 
   mutate(logInt = log(intensity +1))
 
-hist(GF_OMM_filtered$Abundance)
-hist(GF_OMM_filtered$logAbun) #normally distributed
-
 
 #ttest on log values: parametric, unpaired, BH correction by metabolite & site
 ttest <- compare_means(logInt ~ colonization, data = GF_OMM_filtered, paired = F, 
