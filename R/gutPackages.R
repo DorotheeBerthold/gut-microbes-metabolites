@@ -12,6 +12,7 @@ gutPackages <- function() {
   require(RColorBrewer)
   require(reshape2)
   require(forstringr)
+  require(readxl)
 
 
 }
