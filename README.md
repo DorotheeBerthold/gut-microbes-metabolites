@@ -25,7 +25,7 @@ Both tables are merged with the metadata and transformed into the long format fo
 
 ## Calculation of fold-changes between OMM12 and GF mice at different locations
 
-In order to determine bacterially derived metabolites from dietary metabolites, we compared metabolites between OMM12 and GF mice at each respective location. First we determined normalcy of the data, then we log-transformed the data to conform normality. We calculated log2 fold changes for each metabolite at each site and performed a unpaired ttest with Bonferroni-Hoechberg correction for multiple testing. 
+In order to determine bacterially derived metabolites from dietary metabolites, we compared metabolites between OMM12 and GF mice at each respective location. First we determined normalcy of the data, then we log-transformed the data to conform normality. We calculated log2 fold changes for each metabolite at each site and performed a unpaired ttest with Benjamini-Hochberg correction for multiple testing. 
 
 
 ![foldchanges](examples/foldchangeGF_OMM.png)
