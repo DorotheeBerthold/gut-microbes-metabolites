@@ -21,7 +21,9 @@ GF_OMM <- GF_OMM %>%
 keep <- c("duo","jej", "ile", "cec", "col")
 GF_OMM <- GF_OMM[GF_OMM$site2 %in% keep,]
 
-########################## Filter data for FC calculations ################################################################
+##############################################################################################################################
+#Filter data for FC calculations 
+##############################################################################################################################
 
 #check how many observations per site etc for filtering
 #here we group origins together in order to get a more thorough understanding of metabolite abundances
@@ -47,8 +49,9 @@ barcodes_to_keep <- setdiff(GF_OMM$barcode, counts_metabolites_low$barcode)
 # Create a new dataframe by filtering GF_OMM based on the barcodes_to_keep
 GF_OMM_filtered <- GF_OMM[GF_OMM$barcode %in% barcodes_to_keep, ]
 
-
-########################### Normality check + ttest calculation ########################################
+##############################################################################################################################
+#Normality check + ttest calculation
+##############################################################################################################################
 
 #check for normalcy with Q-Q plot
 #here we use testdata to randomly sample 3000 from our df
@@ -117,7 +120,9 @@ GF_OMM_complete <- GF_OMM_complete %>%
 
 GF_OMM_complete <- as.data.frame(GF_OMM_complete)
 
-############################# Plot & Labelling #####################################################
+##############################################################################################################################
+#Plot & Labelling 
+##############################################################################################################################
 
 # Create scatter plot for correlations
 ggplot(data=GF_OMM_complete, aes(x=log2FC, y=log10_padj)) + geom_point() +facet_wrap(~site2)

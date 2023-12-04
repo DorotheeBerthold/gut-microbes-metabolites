@@ -3,7 +3,9 @@
 ## Dorothée L. Berthold, ETH Zürich                       ##
 ############################################################
 
-#################### Create wide-formats for correlation calculations #################################
+##############################################################################################################################
+#Create wide-formats for correlation calculations
+##############################################################################################################################
 
 #use wide formats, using sites as replicates for correlations
 #here I used content + lumen to find more correlations
@@ -77,7 +79,9 @@ corrDat <- corrDat[,-c(4,5)]
 corrDat <- corrDat %>% 
   filter(!is.na(correlation))
 
-################# Filter correlation matrix ##########################################################
+##############################################################################################################################
+#Filter correlation matrix
+##############################################################################################################################
 
 # Filter out metabolites from GF_OMM_complete df that are upregulated in GF (DOWN in OMM vs GF)
 # GF_OMM_complete created in "foldchange.R"
@@ -109,7 +113,9 @@ abline(v = -thres, col = "black", lwd = 1.2, lty = "dotted")
 filtered_corrDat <- filtered_corrDat[abs(filtered_corrDat$correlation) >= thres, ] #307 higher correlations total 
 filtered_corrDat <- filtered_corrDat[abs(filtered_corrDat$pval) < 0.05, ] #223 significant correlations
 
-################################# Heatmap for correlation matrix #################################################################
+##############################################################################################################################
+#Heatmap for correlation matrix
+##############################################################################################################################
 
 #make filtered_corrDat into matrix for heatmap plotting
 corrDat_wide <- reshape2::acast(filtered_corrDat, 
