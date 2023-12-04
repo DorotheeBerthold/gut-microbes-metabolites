@@ -14,9 +14,9 @@ Some of the functions include:
 
 Dataframes for both metabolite measurements and 16S abundance measurements are imported and matched with the respective metadata. 
 
-[Metabolites](examples/intdata_all.csv)
+[Metabolites](examples/intdata_all.csv)     [Metadata Metabolites](examples/meta_metabolites.csv)
 
-[Microbes](examples/rarefied_OTU_table_RA_Family.csv)
+[Microbes](examples/rarefied_OTU_table_RA_Family.csv)   [Metadata 16S](examples/metadata_16S.csv)
 
 Metabolites were sampled along the gut featuring 15 sample sites, whereas 16S data is sampled from five distinct sites (duodenum, jejunum, ileum, cecum and colon) along the gut. Metabolomic data is recoded to the microbial sample sites and averaged over those.
 
