@@ -7,7 +7,8 @@
 
 #use wide formats, using sites as replicates for correlations
 #here I used content + lumen to find more correlations
-#use OMM_long created in "foldchange.R" - filtered and subset for colonization "sDMDM2"
+#use OMM_long created in "2_foldchange.R" - filtered and subset for colonization "sDMDM2"
+#use microbes_long_mean created in "1_dataimport.R"
 
 metabolite_input <- reshape2::acast(OMM_long, formula = metabolite ~ site2, 
                                         fill = 0, value.var = "log_OMM_concentration", 
