@@ -67,7 +67,7 @@ metabolite_long2 <- metabolite_long2[metabolite_long2$site2 %in% keep,]
 family_16S <- as.data.frame(read_excel("examples/rarefied_OTU_table_RA_Family.xlsx"))
 
 #read in metadata
-meta_16S <- read_excel("examples/metadata_16S.xlsx")
+meta_16S <- read.csv("examples/metadata_16S.csv")
 meta_16S <- subset(meta_16S, microbiota == "OMM")
 
 #multiply fractions * 100 in order to create relative abundances instead of fractions
