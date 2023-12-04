@@ -16,7 +16,7 @@ Dataframes for both metabolite measurements and 16S abundance measurements are i
 
 [Metabolites](examples/intdata_all.csv)
 
-[Microbes](examples/rarefied_OTU_table_RA_Family.xlsx)
+[Microbes](examples/rarefied_OTU_table_RA_Family.csv)
 
 Metabolites were sampled along the gut featuring 15 sample sites, whereas 16S data is sampled from five distinct sites (duodenum, jejunum, ileum, cecum and colon) along the gut. Metabolomic data is recoded to the microbial sample sites and averaged over those.
 
