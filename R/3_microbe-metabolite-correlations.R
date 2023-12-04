@@ -118,5 +118,9 @@ corrDat_wide <- reshape2::acast(filtered_corrDat,
                                 value.var = "correlation", 
                                 fun.aggregate = sum, 
                                 drop = FALSE)
-
-pheatmap(corrDat_wide, cluster_rows = T, cluster_cols = F)
+#heatmap plotting
+pheatmap(corrDat_wide, 
+         cluster_rows = T, 
+         cluster_cols = F, 
+         border_color = "black",
+         color = hcl.colors(50, "BluYl"))
