@@ -4,7 +4,7 @@
 ############################################################
 
 
-#use metabolites_long created in "dataimport.R"
+#use metabolites_long created in "1_dataimport.R"
 
 #subset metabolites into GF and OMM only to calculate fold-changes
 GF_OMM <- subset(metabolites_long, metabolites$colonization == c("GF", "sDMDM"))
