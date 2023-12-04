@@ -100,4 +100,12 @@ microbes <- microbes[,-c(1,4)]
 microbes_long <- reshape2::melt(microbes, id.vars = c("origin", "site", "mouse number"))
 colnames(microbes_long) [4:5] <- c("Bacteria", "Abundance")
 
+#calculate mean abundance across biological replicates
+microbes_long_mean <- microbes_long  %>%  
+  group_by(Bacteria, site, origin) %>% 
+  mutate(mean_abundance = mean(Abundance, na.rm = T)) %>% 
+  ungroup() %>%  
+  group_by(mean_abundance) %>%  
+  distinct(Bacteria, site, origin)
 
+microbes_long_mean <- as.data.frame(microbes_long_mean)
