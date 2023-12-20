@@ -13,7 +13,7 @@ gutPackages <- function() {
   require(reshape2)
   require(forstringr)
   require(readxl)
-  require(ggpubr
+  require(ggpubr)
 
 
 }
